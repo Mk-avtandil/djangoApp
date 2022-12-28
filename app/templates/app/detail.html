@@ -1,0 +1,23 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<div class="card my-3">
+    {% if post.photo %}
+        <img class="card-img-top" src="{{ post.photo.url }}" alt="Card image">
+    {% endif %}
+    <div class="card-body">
+        <h5 class="card-title py-2">{{ post.name }}</h5>
+        <p>Способность: {{ post.ability }}</p>
+        <p>Пол: {{ post.gender }}</p>
+        <hr>
+        <p class="card-text">{{ post.about }}</p>
+    </div>
+    <div class="card-footer">
+        <small class="text-muted">time create: {{ post.time_create }}</small>
+        <br>
+        <small class="text-muted">time update: {{ post.time_update }}</small>
+
+    </div>
+</div>
+
+{% endblock %}

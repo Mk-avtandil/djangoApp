@@ -1,0 +1,17 @@
+{% extends 'app/base.html' %}
+
+
+{% block content %}
+<div class="w-50 my-4 py-4">
+    <h1>Регистрация</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% for f in form %}
+        <p>{{ f }}</p>
+        <div class="form-error">{{ f.errors }}</div>
+        {% endfor %}
+        <button class="btn btn-dark form-control" type="submit">Регистрация</button>
+    </form>
+</div>
+
+{% endblock %}
